@@ -8,7 +8,7 @@ from sklearn.metrics import mean_squared_error, mean_absolute_percentage_error
 import numpy as np
 import subprocess
 
-root_path= "/home/vicevil/taller_despliegue/"
+root_path= "/home/JBL/taller_despliegue/"
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
