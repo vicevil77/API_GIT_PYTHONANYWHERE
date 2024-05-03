@@ -7,6 +7,7 @@ from sklearn.linear_model import Lasso
 from sklearn.metrics import mean_squared_error, mean_absolute_percentage_error
 import numpy as np
 import subprocess
+import logging
 
 root_path= "/home/JBLapiweb/bike_predictor/"
 
@@ -20,7 +21,16 @@ def hello(): # Ligado al endopoint "/" o sea el home, con el método GET
 @app.route('/api/v1/predict', methods= ['GET'])
 def predict(): # Ligado al endpoint '/api/v1/predict', con el método GET
 
-    model = pickle.load(open(root_path +'bike_model.pkl','rb'))
+    # Configure logging
+    logging.basicConfig(filename='myapp.log', level=logging.DEBUG,
+                        format='%(asctime)s:%(levelname)s:%(message)s')
+    # Usage in your application
+    try:
+        model = pickle.load(open(root_path +'bike_model.pkl','rb'))
+        pass
+    except Exception as e:
+        logging.error("An error occurred", exc_info=True)
+
     holiday = request.args.get('holiday', 0)
     workingday = request.args.get('workingday', 1)
     weather = request.args.get('weather', 0)
