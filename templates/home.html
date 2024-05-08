@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bienvenido al modelo predictorio de salarios de Data Scientist</title>
+    <style>
+        body {
+            text-align: center;
+            padding: 10%;
+        }
+        h1 {
+            color: #2e6da4;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Este modelo  ha sido entrenado con datos extraidos de Kaggle y se encuentra disponible para su uso.</p>
+        <p>Para realizar una predicción de salario, visita <a href="{{ url_for('predict') }}">/api/v1/predict</a>.</p>
+        <p>Para reentrenar el modelo con nuevos datos, visita <a href="{{ url_for('retrain') }}">/api/v1/retrain</a>.</p>
+    </div>
+    <img src="{{ url_for('static', filename='imagen_ds.jpg') }}" alt="Imagen descriptiva">
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predicción de Salarios</title>
+    <style>
+        body {
+            text-align: center; /* centra el texto */
+            padding: 10%;
+        }
+        h1 {
+            color: #2e6da4;
+        }
+        
+    </style>
+    <body>
+        <h1>Predicción de Salarios</h1>
+        <img src="{{ url_for('static', filename='imagen_pred.jpg') }}" alt="Imagen descriptiva"> 
+        <div>
+            <form action="/api/v1/predict" method="get">
+                <p> La predicción de salario es: "{{ prediction }}"</p>
+                                              
+            </form>
+        </div>
+        </body>
+    </head>
+    </html>
+
+
+
+    

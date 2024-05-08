@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reentrenamiento del Modelo</title>
+    <style>
+        body {
+            text-align: center; /* centra el texto */
+            padding: 10%;
+        }
+        h1 {
+            color: #2e6da4;
+            }
+    </style>
+    <<body>
+        <h1>Reentrenamiento del Modelo</h1>
+        <img src="{{ url_for('static', filename='imagen_ret.jpg') }}" alt="Imagen descriptiva"> 
+            <div>
+                <form action="/api/v1/retrain" method="get">
+                    <p>El modelo se ha reentrenado con éxito. rmse: {{ rmse }}, mape: {{ mape }}</p>
+                                                
+                </form>
+            </div>
+     </body>
+ </head>
+ </html>
+    
+    
